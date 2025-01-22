@@ -1,0 +1,26 @@
+let [users, setUsers] = useState([]); 
+
+// 회원가입 시 필요정보를 받는 절차
+<form>
+이름 : <input type="text" id="nickname"></input>
+나이 : <input type="text" id="age"></input>
+<button onClick={()=>{ signup() }}>입력</button>
+</form>
+
+function signup() {
+  // 두 input 상자에 값이 모두 잘 들어 있다면
+  let nickname = document.querySelector("#nickname").value;
+  let age = document.querySelector("#age").value;
+
+  // 사용자 정보를 담을 배열(users) 선언(state로)
+
+  // 위의 두 input 상자 정보를 담을 object를 생성한 후에 
+  let user = {nickname : nickname, age : age}
+
+  user = {nickname : 'kim', age : 20}
+
+  // users에 추가
+  let temp = [...users];
+  temp.push(user);
+  setUsers([...temp]);
+}
